@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Temazcal - Inicio</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<div class="contenedor">
+
+<h2>Bienvenido a Temazcal</h2>
+
+<div id="inicio">
+<button onclick="mostrarRegistro()">Registrarse</button>
+<button onclick="mostrarLogin()">Ingresar</button>
+</div>
+
+<div id="registro" class="oculto">
+<h3>Registro</h3>
+
+<input type="text" id="regNombre" placeholder="Nombre">
+<input type="email" id="regCorreo" placeholder="Correo">
+<input type="tel" id="regTelefono" placeholder="Teléfono">
+
+<div class="input-pass">
+<input type="password" id="regPass" placeholder="Contraseña">
+<span onclick="togglePassword('regPass', this)">👁️</span>
+</div>
+
+<button onclick="registrar()">Guardar</button>
+<button onclick="volverInicio()">Volver</button>
+</div>
+
+<div id="login" class="oculto">
+<h3>Ingresar</h3>
+
+<div class="input-pass">
+<input type="password" id="loginPass" placeholder="Contraseña">
+<span onclick="togglePassword('loginPass', this)">👁️</span>
+</div>
+
+<button onclick="ingresar()">Entrar</button>
+<button onclick="volverInicio()">Volver</button>
+</div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
