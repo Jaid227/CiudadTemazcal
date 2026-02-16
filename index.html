@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Temazcal Ciudad Retoño</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<h1>Temazcal Ciudad Retoño</h1>
+
+<div id="servicios"></div>
+
+<div class="panel">
+<h3>Acceso</h3>
+<button onclick="mostrarRegistro()">Registrarse</button>
+<button onclick="mostrarLogin()">Ingresar</button>
+<button onclick="mostrarAdmin()">Administrador</button>
+</div>
+
+<div id="registro" class="oculto">
+<input type="text" id="regNombre" placeholder="Nombre">
+<input type="email" id="regCorreo" placeholder="Correo">
+<input type="tel" id="regTelefono" placeholder="Teléfono">
+<input type="password" id="regPass" placeholder="Contraseña">
+<button onclick="registrar()">Guardar</button>
+</div>
+
+<div id="login" class="oculto">
+<input type="email" id="loginCorreo" placeholder="Correo">
+<input type="password" id="loginPass" placeholder="Contraseña">
+<button onclick="ingresar()">Entrar</button>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
