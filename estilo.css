@@ -1,105 +1,103 @@
 body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:#111;
-    color:white;
-    text-align:center;
+  margin:0;
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:white;
+  text-align:center;
+  font-family:'Segoe UI',sans-serif;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  min-height:100vh;
 }
 
-.hero{
-    padding:80px 20px;
-    background:linear-gradient(to bottom,#000,#222);
-}
-
-.hero h1{
-    font-size:42px;
-    margin-bottom:20px;
-}
-
-.hero p{
-    max-width:600px;
-    margin:auto;
-    line-height:1.6;
-    opacity:0.85;
-}
-
-.servicios{
-    padding:60px 20px;
-}
-
-.cards{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:30px;
-}
-
+/* TARJETAS */
 .card{
-    background:#1c1c1c;
-    padding:30px;
-    width:280px;
-    border-radius:15px;
-    cursor:pointer;
-    transition:0.3s;
+  background:#1c1c1c;
+  margin:20px auto;
+  padding:25px;
+  width:260px;
+  border-radius:15px;
+  cursor:pointer;
+  transition:all .3s ease;
+  border:2px solid transparent;
+  box-shadow:0 10px 25px rgba(0,0,0,.4);
 }
 
 .card:hover{
-    transform:scale(1.05);
-    background:#333;
+  transform:translateY(-5px) scale(1.03);
+  border:2px solid #00ff88;
+  box-shadow:0 15px 35px rgba(0,255,136,.4);
 }
 
+/* MODAL */
 .modal{
-    display:none;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.85);
-    justify-content:center;
-    align-items:center;
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.85);
+  backdrop-filter:blur(5px);
+  justify-content:center;
+  align-items:center;
+  animation:fadeIn .3s ease;
 }
 
-.modal-content{
-    background:#222;
-    padding:40px;
-    border-radius:15px;
-    width:320px;
-    position:relative;
+/* CONTENIDO DEL MODAL */
+.contenido{
+  background:#111;
+  padding:35px;
+  border-radius:20px;
+  width:320px;
+  box-shadow:0 20px 40px rgba(0,0,0,.6);
+  border-top:5px solid #00ff88;
+  animation:slideUp .4s ease;
 }
 
-.cerrar{
-    position:absolute;
-    right:15px;
-    top:10px;
-    cursor:pointer;
+/* BOTÓN VERDE */
+.btn-verde{
+  background:#00ff88;
+  color:black;
+  border:none;
+  padding:12px 20px;
+  border-radius:30px;
+  margin-top:15px;
+  cursor:pointer;
+  font-weight:bold;
+  transition:.3s;
 }
 
-input{
-    width:100%;
-    padding:10px;
-    margin:10px 0;
-    border:none;
-    border-radius:8px;
+.btn-verde:hover{
+  background:#00cc6a;
+  transform:scale(1.05);
 }
 
-button{
-    width:100%;
-    padding:12px;
-    background:#ff7a00;
-    border:none;
-    border-radius:8px;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-    transition:0.3s;
+/* BOTÓN ROJO */
+.btn-rojo{
+  background:#ff3c3c;
+  color:white;
+  border:none;
+  padding:12px 20px;
+  border-radius:30px;
+  margin-top:10px;
+  cursor:pointer;
+  font-weight:bold;
+  transition:.3s;
 }
 
-button:hover{
-    background:#ff5500;
+.btn-rojo:hover{
+  background:#cc0000;
+  transform:scale(1.05);
 }
 
-.cuenta{
-    font-weight:bold;
-    margin:15px 0;
+/* ANIMACIONES */
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+@keyframes slideUp{
+  from{transform:translateY(40px); opacity:0;}
+  to{transform:translateY(0); opacity:1;}
 }
