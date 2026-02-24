@@ -23,7 +23,7 @@ async function enviar(){
 
     const base64=reader.result;
 
-    const response=await fetch("PEGA_AQUI_TU_WEB_APP_URL",{
+    const response=await fetch("https://jaid227.github.io/CiudadTemazcal/",{
       method:"POST",
       body:JSON.stringify({
         nombre:nombre,
@@ -56,3 +56,4 @@ Comprobante: ${data.link}
 
   reader.readAsDataURL(file);
 }
+
