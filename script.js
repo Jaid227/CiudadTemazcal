@@ -1,4 +1,3 @@
-
 let servicioActual = "";
 
 function seleccionarServicio(servicio){
@@ -32,10 +31,12 @@ Adjunto mi comprobante de pago.
 
     const numero = "5591461227"; // CAMBIA ESTE NÚMERO POR EL TUYO
 
-    const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensaje);
+    const url = "https://web.whatsapp.com/send?phone=" 
+                + numero 
+                + "&text=" 
+                + encodeURIComponent(mensaje);
 
     window.open(url, "_blank");
 
-    alert("Se abrirá WhatsApp. Adjunta la imagen manualmente antes de enviar.");
-
+    alert("Se abrirá WhatsApp Web. Adjunta la imagen manualmente antes de enviar.");
 }
