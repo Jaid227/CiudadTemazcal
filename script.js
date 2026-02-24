@@ -23,7 +23,7 @@ async function enviar(){
 
     const base64=reader.result;
 
-    const response=await fetch("https://jaid227.github.io/CiudadTemazcal/",{
+    const response=await fetch("https://script.google.com/macros/s/AKfycbx_jCGdXFOxVcy-ucmtl12Z_nhP5VAIcAMHUghlRg0ZrsRwnh7-oNtipEK-nCj65F3x/exec",{
       method:"POST",
       body:JSON.stringify({
         nombre:nombre,
@@ -56,4 +56,5 @@ Comprobante: ${data.link}
 
   reader.readAsDataURL(file);
 }
+
 
