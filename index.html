@@ -2,60 +2,28 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Temazcal Ancestral</title>
+<title>Temazcal</title>
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
-<header class="hero">
-    <h1>Temazcal Ancestral</h1>
-    <p>
-        Ritual ancestral de purificación física, mental y espiritual.
-        Vive una experiencia profunda de conexión con la tierra y el fuego.
-    </p>
-</header>
+<h1>Temazcal Ancestral</h1>
 
-<section class="servicios">
-    <h2>Nuestros Servicios</h2>
+<div class="card" onclick="seleccionar('Temazcal Individual - $800')">
+Temazcal Individual
+</div>
 
-    <div class="cards">
+<div class="card" onclick="seleccionar('Temazcal Pareja - $1500')">
+Temazcal Pareja
+</div>
 
-        <div class="card" onclick="seleccionarServicio('Temazcal Individual - $800')">
-            <h3>Temazcal Individual</h3>
-            <p>Sesión personal de sanación y renovación.</p>
-        </div>
-
-        <div class="card" onclick="seleccionarServicio('Temazcal en Pareja - $1500')">
-            <h3>Temazcal en Pareja</h3>
-            <p>Experiencia compartida de armonización.</p>
-        </div>
-
-        <div class="card" onclick="seleccionarServicio('Temazcal Grupal - $3000')">
-            <h3>Temazcal Grupal</h3>
-            <p>Hasta 6 personas en ceremonia guiada.</p>
-        </div>
-
-    </div>
-</section>
-
-<!-- MODAL -->
 <div class="modal" id="modal">
-    <div class="modal-content">
-
-        <span class="cerrar" onclick="cerrarModal()">✖</span>
-
-        <h3 id="servicioSeleccionado"></h3>
-
-        <p>Realiza tu transferencia a la siguiente cuenta:</p>
-        <p class="cuenta">1234 5678 9012</p>
-
-        <input type="text" id="nombre" placeholder="Ingresa tu nombre">
-        <input type="file" id="imagen">
-
-        <button onclick="enviarWhatsApp()">Enviar a WhatsApp</button>
-
-    </div>
+  <div class="contenido">
+    <h3 id="servicio"></h3>
+    <input type="text" id="nombre" placeholder="Tu nombre">
+    <input type="file" id="imagen">
+    <button onclick="enviar()">Enviar</button>
+  </div>
 </div>
 
 <script src="script.js"></script>
