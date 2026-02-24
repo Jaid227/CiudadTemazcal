@@ -30,11 +30,12 @@ Nombre: ${nombre}
 Adjunto mi comprobante de pago.
 `;
 
-    const numero = "5215512345678"; // CAMBIA ESTE NÚMERO POR EL TUYO
+    const numero = "5591461227"; // CAMBIA ESTE NÚMERO POR EL TUYO
 
     const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensaje);
 
     window.open(url, "_blank");
 
     alert("Se abrirá WhatsApp. Adjunta la imagen manualmente antes de enviar.");
+
 }
