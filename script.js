@@ -1,42 +1,58 @@
-let servicioActual = "";
+let servicioActual="";
 
-function seleccionarServicio(servicio){
-    servicioActual = servicio;
-    document.getElementById("servicioSeleccionado").innerText = servicio;
-    document.getElementById("modal").style.display = "flex";
+function seleccionar(servicio){
+  servicioActual=servicio;
+  document.getElementById("servicio").innerText=servicio;
+  document.getElementById("modal").style.display="flex";
 }
 
-function cerrarModal(){
-    document.getElementById("modal").style.display = "none";
-}
+async function enviar(){
 
-function enviarWhatsApp(){
+  const nombre=document.getElementById("nombre").value;
+  const fileInput=document.getElementById("imagen");
+  const file=fileInput.files[0];
 
-    const nombre = document.getElementById("nombre").value;
+  if(!nombre || !file){
+    alert("Completa todos los campos");
+    return;
+  }
 
-    if(nombre === ""){
-        alert("Por favor ingresa tu nombre");
-        return;
-    }
+  const reader=new FileReader();
 
-    const mensaje = `
-Hola, me interesa el siguiente servicio:
+  reader.onload=async function(){
 
-${servicioActual}
+    const base64=reader.result;
+
+    const response=await fetch("PEGA_AQUI_TU_WEB_APP_URL",{
+      method:"POST",
+      body:JSON.stringify({
+        nombre:nombre,
+        servicio:servicioActual,
+        imagen:base64,
+        tipo:file.type,
+        nombreArchivo:file.name
+      })
+    });
+
+    const data=await response.json();
+
+    const numero="5215512345678"; // CAMBIA TU NUMERO
+
+    const mensaje=`
+Nuevo servicio solicitado:
 
 Nombre: ${nombre}
-
-Adjunto mi comprobante de pago.
+Servicio: ${servicioActual}
+Comprobante: ${data.link}
 `;
 
-    const numero = "5591461227"; // CAMBIA ESTE NÚMERO POR EL TUYO
+    const url="https://web.whatsapp.com/send?phone="
+              +numero+
+              "&text="+encodeURIComponent(mensaje);
 
-    const url = "https://web.whatsapp.com/send?phone=" 
-                + numero 
-                + "&text=" 
-                + encodeURIComponent(mensaje);
+    window.open(url,"_blank");
 
-    window.open(url, "_blank");
+  };
 
-    alert("Se abrirá WhatsApp Web. Adjunta la imagen manualmente antes de enviar.");
+  reader.readAsDataURL(file);
 }
