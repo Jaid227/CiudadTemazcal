@@ -1,6 +1,6 @@
 body{
   margin:0;
-  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  background:linear-gradient(135deg,#0f2927,#209a43,#2c9344);
   color:white;
   text-align:center;
   font-family:'Segoe UI',sans-serif;
@@ -101,3 +101,4 @@ body{
   from{transform:translateY(40px); opacity:0;}
   to{transform:translateY(0); opacity:1;}
 }
+
